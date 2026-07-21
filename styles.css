@@ -27,9 +27,11 @@ a { color: inherit; }
 .site-header nav { display: flex; gap: clamp(1.2rem, 3vw, 2.5rem); }
 .site-header nav a { text-decoration: none; font-size: .72rem; text-transform: uppercase; letter-spacing: .11em; color: #d9e2f0; }
 .site-header nav a:hover, .site-header nav a:focus-visible { color: var(--gold); }
-.nav-cta { color: var(--gold); text-decoration: none; font-size: .72rem; text-transform: uppercase; letter-spacing: .11em; border-bottom: 1px solid var(--gold); padding-bottom: .2rem; }
+.nav-cta, .email-cta { color: var(--gold); text-decoration: none; font-size: .72rem; text-transform: uppercase; letter-spacing: .11em; border-bottom: 1px solid var(--gold); padding-bottom: .2rem; }
+.email-cta { color: #fff; border-bottom-color: rgba(255,255,255,.72); }
+.nav-cta:hover, .nav-cta:focus-visible, .email-cta:hover, .email-cta:focus-visible { color: #fff; border-bottom-color: #fff; }
 .header-actions { display: flex; align-items: center; gap: 1.1rem; }
-.resume-cta { min-height: 38px; display: inline-flex; align-items: center; gap: .55rem; padding: .55rem .85rem; color: var(--navy); background: var(--gold); text-decoration: none; font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+.resume-cta { min-height: 38px; display: inline-flex; align-items: center; gap: .55rem; padding: .55rem .85rem; color: #020b19; background: var(--gold); text-decoration: none; font-size: .74rem; font-weight: 900; text-transform: uppercase; letter-spacing: .055em; box-shadow: inset 0 0 0 1px rgba(2,11,25,.18); }
 .resume-cta:hover, .resume-cta:focus-visible { background: #edcb5a; }
 
 .hero { min-height: 790px; padding: clamp(4.5rem, 9vw, 8.5rem) var(--edge) 4.5rem; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: clamp(2.5rem, 7vw, 7rem); position: relative; overflow: hidden; background: radial-gradient(circle at 76% 35%, rgba(0,87,184,.33), transparent 28%), linear-gradient(120deg, #06162f 0%, #071a37 58%, #031025 100%); }
@@ -43,7 +45,7 @@ h1 em, h2 em { color: var(--gold-soft); font-weight: 500; }
 .hero-intro { max-width: 650px; font-size: clamp(1rem, 1.3vw, 1.16rem); color: #ced8e8; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 2.2rem; }
 .button { min-height: 49px; padding: .85rem 1.2rem; display: inline-flex; align-items: center; justify-content: center; gap: 1.35rem; text-decoration: none; text-transform: uppercase; letter-spacing: .1em; font-size: .69rem; font-weight: 800; }
-.button-gold { background: var(--gold); color: #071329; }
+.button-gold { background: var(--gold); color: #020b19; font-size: .76rem; font-weight: 900; letter-spacing: .055em; box-shadow: inset 0 0 0 1px rgba(2,11,25,.18); }
 .button-gold:hover, .button-gold:focus-visible { background: #edcb5a; }
 .text-link { color: #eef3fb; text-decoration: none; font-size: .78rem; border-bottom: 1px solid rgba(255,255,255,.45); padding-bottom: .25rem; }
 .hero-portrait-shell { position: relative; z-index: 2; justify-self: center; width: min(100%, 520px); }
@@ -127,11 +129,13 @@ h1 em, h2 em { color: var(--gold-soft); font-weight: 500; }
 .contact-mark { position: absolute; right: -4%; width: 68%; opacity: .31; filter: drop-shadow(0 24px 42px rgba(0,0,0,.28)); }
 .contact-copy { max-width: 800px; position: relative; z-index: 2; }
 .contact-copy > p:not(.section-kicker) { color: #c2cde0; max-width: 610px; font-size: 1.04rem; }
-.contact .button { margin-top: 1.2rem; }
+.contact-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.2rem; }
 
 footer { min-height: 120px; padding: 1rem var(--edge); display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: #020b19; border-top: 1px solid rgba(212,175,55,.25); font-size: .68rem; }
 footer p { color: #8fa0ba; }
-footer > a:last-child { color: var(--gold-soft); text-decoration: none; }
+.footer-links { display: flex; align-items: center; gap: 1.25rem; }
+.footer-links a { color: var(--gold-soft); text-decoration: none; }
+.footer-links a:hover, .footer-links a:focus-visible { color: #fff; }
 
 :focus-visible { outline: 2px solid #f0d16b; outline-offset: 4px; }
 
@@ -167,10 +171,12 @@ footer > a:last-child { color: var(--gold-soft); text-decoration: none; }
 }
 
 @media (max-width: 520px) {
+  .site-header { gap: .5rem; padding-left: .75rem; padding-right: .75rem; }
   .brand span { display: none; }
-  .header-actions { gap: .55rem; }
-  .resume-cta, .nav-cta { font-size: .58rem; }
-  .resume-cta { padding: .45rem .6rem; min-height: 34px; }
+  .brand img { width: 70px; height: 58px; }
+  .header-actions { gap: .4rem; }
+  .nav-cta, .email-cta { font-size: .52rem; letter-spacing: .07em; }
+  .resume-cta { padding: .4rem .5rem; min-height: 32px; font-size: .58rem; letter-spacing: .04em; }
   .hero-actions { align-items: flex-start; flex-direction: column; }
   .portrait-frame img { height: 440px; }
   .about-visual { min-height: 0; }
